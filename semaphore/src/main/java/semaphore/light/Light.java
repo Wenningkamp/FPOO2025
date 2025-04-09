@@ -2,6 +2,8 @@ package semaphore.light;
 
 public interface Light {
 	
+	enum OnOff {ON, OFF}
+	
 	void turnOn();
 	void turnOff();
 	
@@ -9,3 +11,4 @@ public interface Light {
 	boolean isOff();
 
 }
+
