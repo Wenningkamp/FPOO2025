@@ -6,6 +6,17 @@
   <name>Projeto semaforo</name>
   <description>projeto de aprendizado poo</description>
   
+  <properties>
+  	<maven.compiler.target>17</maven.compiler.target>
+  	<maven.compiler.source>17</maven.compiler.source>
+  </properties>
   
+	  <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+	<dependency>
+	    <groupId>org.junit.jupiter</groupId>
+	    <artifactId>junit-jupiter-api</artifactId>
+	    <version>5.13.0-M2</version>
+	    <scope>test</scope>
+	</dependency>
   
 </project>
