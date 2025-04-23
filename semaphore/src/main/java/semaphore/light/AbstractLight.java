@@ -1,6 +1,8 @@
 package semaphore.light;
 
-public class AbstractLight implements Light {
+import semaphore.util.TurnOnOff;
+
+public class AbstractLight implements TurnOnOff {
 	
 	private OnOff state = OnOff.OFF;
 	
