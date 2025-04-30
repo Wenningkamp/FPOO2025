@@ -3,21 +3,26 @@ package semaphore.spot;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Point;
+import java.awt.Graphics;
 
+import semaphore.light.AbstractLight;
 import semaphore.light.Light;
 import semaphore.light.e27.AbstractLightE27;
 import semaphore.util.TurnOnOff;
+import semaphore.util.gui.Paintable;
 
-public class SpotLight implements TurnOnOff{
+public class SpotLight implements TurnOnOff, Paintable{
 	
 	private Point position = new Point(0,0);
 	private Dimension dimension = new Dimension(20,20);
 	
-	private Light light;
-	private Image mask;
+	private AbstractLight light;
+	private Image maskOn;
+	private Image maskOff;
 	
-	public SpotLight(Image mask) {
-		this.mask = mask;
+	public SpotLight(Image maskOn, Image maskOff) {
+		this.maskOn = maskOn;
+		this.maskOff = maskOff;
 	}
 	
 	public void setPosition(int xLeft, int yTop) {
@@ -42,7 +47,7 @@ public class SpotLight implements TurnOnOff{
 	}
 	
 	public void setLight(AbstractLightE27 light) {
-		this.light = (Light) light;
+		this.light =  light;
 	}
 	
 	@Override
@@ -57,14 +62,37 @@ public class SpotLight implements TurnOnOff{
 
 	@Override
 	public boolean isOn() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.light != null && this.light.isOn();
 	}
 
 	@Override
 	public boolean isOff() {
-		// TODO Auto-generated method stub
-		return false;
+		return this.light != null && this.light.isOff();
 	}
 
+
+	@Override
+	public void paint(Graphics g) {
+		
+		int xLeft = position.x;
+		int yTop = position.y;
+		int width = dimension.width;
+		int height = dimension.height;
+		
+		
+		if(this.isOn())
+			g.drawImage(maskOn, xLeft, yTop, width, height, null);
+		else
+			g.drawImage(maskOn, xLeft, yTop, width, height, null);
+		
+		
+	}
+	
+	
+	
 }
+
+
+
+
+
