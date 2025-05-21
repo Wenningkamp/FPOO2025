@@ -83,7 +83,7 @@ public class SpotLight implements TurnOnOff, Paintable{
 		if(this.isOn())
 			g.drawImage(maskOn, xLeft, yTop, width, height, null);
 		else
-			g.drawImage(maskOn, xLeft, yTop, width, height, null);
+			g.drawImage(maskOff, xLeft, yTop, width, height, null);
 		
 		
 	}

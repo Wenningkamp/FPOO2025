@@ -10,9 +10,11 @@ import javax.imageio.ImageIO;
 
 import semaphore.light.e27.E27LightBulb;
 import semaphore.spot.SpotLight;
+import semaphore.trafficLight.TrafficLight;
+import semaphore.util.TurnOnOff;
 import semaphore.util.gui.Paintable;
 
-public class SimpleTrafficLight implements Paintable {
+public class SimpleTrafficLight implements Paintable, TrafficLight {
 
     private Point position = new Point(0,0);
     private Dimension dimension = new Dimension(70, 180);
@@ -143,6 +145,21 @@ public class SimpleTrafficLight implements Paintable {
     		
     	}
     }
+
+	@Override
+	public TurnOnOff spotGreen() {  
+		return green;
+	}
+
+	@Override
+	public TurnOnOff spotYellow() {  
+		return yellow;
+	}
+
+	@Override
+	public TurnOnOff spotRed() { 
+		return red;
+	}
     
 }
 
