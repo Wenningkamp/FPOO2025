@@ -57,8 +57,7 @@ public class AppMVCTest {
 		
 		public static void main(String[] args) throws Exception {
 			
-			AppMVCTest app = new AppMVCTest();
-	       //acho que falta algo aqui
+			new AppMVCTest();
 		}
 
 }
